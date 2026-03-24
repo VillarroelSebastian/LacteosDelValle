@@ -1,0 +1,116 @@
+/* ── Producción ──────────────────────────────────────── */
+
+.orden-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.orden-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.orden-info-card {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.orden-info-card h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.orden-info-card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stock-card {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 1rem;
+  border-left: 4px solid var(--primary);
+}
+
+.stock-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.stock-card .stock-qty {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stock-card .stock-unit {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* PT stock colors */
+.stock-card.liberado { border-left-color: var(--success); }
+.stock-card.liberado .stock-qty { color: var(--success); }
+.stock-card.bloqueado { border-left-color: var(--danger); }
+.stock-card.bloqueado .stock-qty { color: var(--danger); }
+.stock-card.revision { border-left-color: var(--warning); }
+.stock-card.revision .stock-qty { color: var(--warning); }
+
+/* Detalle sections */
+.detail-section {
+  margin-bottom: 2rem;
+}
+
+.detail-section .card {
+  margin-top: 0.5rem;
+}
+
+/* Progress bar */
+.progress-bar-container {
+  background: var(--bg);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  transition: width 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .orden-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-grid {
+    grid-template-columns: 1fr;
+  }
+}
